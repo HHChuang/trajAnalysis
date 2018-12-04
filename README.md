@@ -17,11 +17,11 @@ Analyse the last point of a trajectory with its two directions, and then assign 
 
 
 - Traj: serious of structures (XYZ coordinate)
-    - first line: amount of atom
+    - first line: amount of atom 
     - second line: comment line
     - following line: XYZ coordinat
      
-  and then, repeat this format.
+  and then, repeat this format. For example, there are 5 atom in the following figure, and the comment line starts from its electronic energy. After that, it prints out its Cartesian coordinate. 
 
      <div style='float: center'>
         <img style='width: 400px' src="./fig/traj.png"></img>
@@ -30,7 +30,7 @@ Analyse the last point of a trajectory with its two directions, and then assign 
     <div style='float: center'>
         <img style='width: 500px' src="./fig/def.png"></img>
     </div> 
-    There are 3 types of geometric parameters need to be defined, and the format is same. First, the amount of criterion, i.e. 2 criteria to define dihedral angle in the above example. Second, user-defined value and logic operator, i.e. dihedral angle for atom 3-1-5-4 is grater than -90 degree and less than 90 degree. Make sure use `gt` and `lt` correctly, and use logical operator `and` and `or`. Add `end` in the last one. 
+    There are 3 types of geometric parameters need to be defined, and the format is same. First, the amount of criterion, i.e. 2 criteria to define dihedral angle in the above example. Second, user-defined value and logic operator, i.e. dihedral angle for atom 3-1-5-4 is grater than -90 degree and less than 90 degree. Make sure use `gt` and `lt` correctly, and use logical operator `and` and `or`. Add `end` in the last one. It is case-sensitive, please don't use capital. 
 
 ## Step3. screenshot for demonstration
 - Execute this program
