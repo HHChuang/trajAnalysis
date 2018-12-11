@@ -1,7 +1,7 @@
 # Dynamics
 Analyse the last point of a trajectory with its two directions, and then assign the product name by the user-define criteria. 
 ---
-## Step1. compile forturn source code 
+## Step1. compile Fortran source code 
 
 `ifort -debug all -o countProd countProd.f90`
 
