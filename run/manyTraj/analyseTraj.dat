@@ -10,7 +10,7 @@ output:
         2. /Users/Grace/GoogleNTU_Drive/Code/GitHub/trajAnalysis/run/manyTraj/RP2/
 
 std-out: 
-total traj.: 0
+total traj.: 1
 
 OtherOther: 0
 RR: 0
@@ -21,6 +21,6 @@ OtherP1: 0
 OtherP2: 0
 P1P2: 0
 
-RP1: 0
+RP1: 1
 RP2: 0
 ----------------------------------------------------------------
