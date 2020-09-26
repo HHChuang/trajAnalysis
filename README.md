@@ -1,44 +1,75 @@
-# Dynamics
-Analyse the last point of a trajectory with its two directions, and then assign the product name by the user-define criteria. 
+# Analyse dynamic trajectories 
+Group the last points of a trajectories by user-define criteria. 
 ---
-## Step1. compile Fortran source code 
+## Step1. Compile Fortran source code 
 
-`ifort -debug all -o countProd countProd.f90`
+` ]$ ifort -debug all -o countProd countProd.f90`
 
-- the executable file names countProd
+- the executable file names `countProd`
 - you can add more flags while compiling
 
-## Step2. instruction of input files in directory `run`
+## Step2. Analyse one trajectory in `/run/oneTraj`
 
-1. Traj
-2. defR.dat
-3. defProd1.dat
-4. defProd2.dat
+` ]$ CondProd Traj1 defR.dat defProd1.dat defProd2.dat` 
+<div style='float: center'>
+        <img style='width: 400px' src="./fig/demo1.png"></img>
+</div>
 
+- Input 
+  1. Traj1
+  2. defR.dat
+  3. defProd1.dat
+  4. defProd2.dat
 
-- Traj: serious of structures (XYZ coordinate)
+- **Traj1: serious of structures (XYZ coordinate)**
     - first line: amount of atom 
     - second line: comment line
     - following line: XYZ coordinat
      
-  and then, repeat this format. For example, there are 5 atom in the following figure, and the comment line starts from its electronic energy. After that, it prints out its Cartesian coordinate. 
+    Repeat the above format in a trajectory. For example, there are 5 atom in the following figure, and the comment line starts from its electronic energy. After that, it prints out its Cartesian coordinate. 
 
      <div style='float: center'>
         <img style='width: 400px' src="./fig/traj.png"></img>
     </div> 
-- 3 user-defined criteria (defR.dat, defProd1.dat and defProd2.dat)
-    <div style='float: center'>
-        <img style='width: 500px' src="./fig/def.png"></img>
-    </div> 
-    There are 3 types of geometric parameters need to be defined, and the format is same. First, the amount of criterion, i.e. 2 criteria to define dihedral angle in the above example. Second, user-defined value and logic operator, i.e. dihedral angle for atom 3-1-5-4 is grater than -90 degree and less than 90 degree. Make sure use `gt` and `lt` correctly, and use logical operator `and` and `or`. Add `end` in the last one. It is case-sensitive, please don't use capital. 
+    In Singleton's `ProgDyn` progam, the trajectory starts from a transition state and then ends at a local minimum, after that it goes back to the transition state to search the other local minimum. Thus, the structure of trajectory is 
 
-## Step3. screenshot for demonstration
-- Execute this program
-    <div style='float: center'>
-        <img style='width: 400px' src="./fig/demo1.png"></img>
-    </div> 
+    > TS &rarr; Min1 &rarr; TS &rarr; Min2
 
-- Redirect the std-out information in one file, and then you can use shell script to analyse all trajectories in the same directory.
-    <div style='float: center'>
-        <img style='width: 400px' src="./fig/demo2.png"></img>
-    </div> 
+- **Three user-defined criteria (defR.dat, defProd1.dat and defProd2.dat)**
+  - Format of def*.dat  
+        <div style='float: center'>
+            <img style='width: 500px' src="./fig/def.png"></img>
+        </div> 
+    
+    There are three types of geometric parameters (bond length, bond angle and dihedral angle) need to be defined, and the format is same. Keypoints are listed in the following three points. 
+    1. First, the amount of criterion, 
+       - i.e. 2 criteria to define dihedral angle in the above example. 
+    2. Second, user-defined value and logic operator, 
+       - i.e. dihedral angle for atom 3-1-5-4 is grater than -90 degree and less than 90 degree. 
+    3. Make sure use `gt` and `lt` correctly, and use logical operator `and` and `or`. Add `end` in the last one. It is case-sensitive, please don't use capital. 
+
+## Step3. Analyse many trajectories in `/run/manyTraj`
+
+` ]$ manyTraj.sh trajlist.dat defR.dat defProd1.dat defProd2.dat` 
+<div style='float: center'>
+    <img style='width: 600px' src="./fig/demo2.png"></img>
+</div> 
+
+This script calls program `CountProd.f90` to analyse trajectories, and then classify the result into output files/directories. 
+
+- Input
+  - trajlist.dat 
+  - Traj1 
+  - defR.dat
+  - defProd1.dat
+  - defProd2.dat
+
+- Output 
+  - files 
+    - analysesTraj.dat
+    - RP1list.dat 
+    - RP2list.dat 
+  - directories 
+    - /RP1
+    - /RP2
+    

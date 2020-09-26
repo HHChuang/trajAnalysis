@@ -6,11 +6,11 @@ output:
     files: 
         RP1list.dat, RP2list.dat and analysesTraj.dat 
     directories:
-        1. /Users/Grace/GoogleNTU_Drive/Code/GitHub/trajAnalysis/run/RP1/
-        2. /Users/Grace/GoogleNTU_Drive/Code/GitHub/trajAnalysis/run/RP2/
+        1. /Users/Grace/GoogleNTU_Drive/Code/GitHub/trajAnalysis/run/manyTraj/RP1/
+        2. /Users/Grace/GoogleNTU_Drive/Code/GitHub/trajAnalysis/run/manyTraj/RP2/
 
 std-out: 
-total traj.: 1
+total traj.: 0
 
 OtherOther: 0
 RR: 0
@@ -21,6 +21,6 @@ OtherP1: 0
 OtherP2: 0
 P1P2: 0
 
-RP1: 1
+RP1: 0
 RP2: 0
 ----------------------------------------------------------------

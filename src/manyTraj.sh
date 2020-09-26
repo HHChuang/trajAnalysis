@@ -5,7 +5,7 @@
 #   Prerequisite program: CountProg.f90 (classify trajectories)         #
 #																		#
 # Input:																#
-#	1. list.dat (list of trajectories)                                  #
+#	1. trajlist.dat (list of trajectories)                              #
 #   2. defR.dat															#
 #	3. defProd1.dat														#
 #	4. defProd2.dat														#
