@@ -435,4 +435,3 @@ subroutine getTmpInd(LP,Cri,Cond,Log,tmpInd,sumInd)
         ! write(*,*) LP,Cri,tmpInd
     return
 end subroutine getTmpInd
-

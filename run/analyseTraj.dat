@@ -1,0 +1,26 @@
+----------------------------------------------------------------
+
+    Analyse the initial/final point of all the trajectories 
+    
+output:
+    files: 
+        RP1list.dat, RP2list.dat and analysesTraj.dat 
+    directories:
+        1. /Users/Grace/GoogleNTU_Drive/Code/GitHub/trajAnalysis/run/RP1/
+        2. /Users/Grace/GoogleNTU_Drive/Code/GitHub/trajAnalysis/run/RP2/
+
+std-out: 
+total traj.: 1
+
+OtherOther: 0
+RR: 0
+P1P1: 0
+P2P2: 0
+OtherR: 0
+OtherP1: 0
+OtherP2: 0
+P1P2: 0
+
+RP1: 1
+RP2: 0
+----------------------------------------------------------------
