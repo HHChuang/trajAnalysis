@@ -3,7 +3,7 @@ Group the last points of a trajectories by user-define criteria.
 ---
 ## Step1. Compile Fortran source code 
 
-` ]$ ifort -debug all -o countProd countProd.f90`
+` ]$ ifort -debug all -o CountProd CountProd.f90`
 
 - the executable file names `countProd`
 - you can add more flags while compiling
@@ -14,6 +14,12 @@ Group the last points of a trajectories by user-define criteria.
 <div style='float: center'>
         <img style='width: 400px' src="./fig/demo1.png"></img>
 </div>
+
+In Singleton's `ProgDyn` progam, the trajectory starts from a transition state and then ends at a local minimum by user-defined criteria, after that it goes back to the transition state to search the other local minimum. Thus, the structure of trajectory is 
+
+> TS &rarr; Min1 &rarr; TS &rarr; Min2
+
+In `CountProd`, the program extract the last points of trajectory, i.e., Min1 and Min2, to analyse their molecular structure. 
 
 - Input 
   1. Traj1
@@ -31,9 +37,8 @@ Group the last points of a trajectories by user-define criteria.
      <div style='float: center'>
         <img style='width: 400px' src="./fig/traj.png"></img>
     </div> 
-    In Singleton's `ProgDyn` progam, the trajectory starts from a transition state and then ends at a local minimum, after that it goes back to the transition state to search the other local minimum. Thus, the structure of trajectory is 
 
-    > TS &rarr; Min1 &rarr; TS &rarr; Min2
+    
 
 - **Three user-defined criteria (defR.dat, defProd1.dat and defProd2.dat)**
   - Format of def*.dat  
